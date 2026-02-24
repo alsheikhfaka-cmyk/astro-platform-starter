@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout title="من نحن | فني مطابخ الرياض" description="تعرف على فريقنا المتخصص في خدمات المطابخ بالرياض. خبرة طويلة وجودة عالية في جميع أعمال المطابخ.">
+    <Header />
+
+    <section class="relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding-top: 7rem;">
+        <div class="container py-12 sm:py-16 text-center" style="color: var(--color-text-white);">
+            <h1 class="mb-4">من نحن</h1>
+            <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                فريق متخصص من أمهر الفنيين في مجال المطابخ بالرياض
+            </p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+        <div class="container max-w-4xl">
+            <div class="bg-white rounded-xl p-8 sm:p-12 shadow-sm">
+                <h2 class="mb-6" style="color: var(--color-primary);">حقين مطابخ بالرياض</h2>
+                <p class="text-lg leading-relaxed mb-6" style="color: var(--color-text-light);">
+                    نحن فريق متخصص من الفنيين المحترفين في مجال المطابخ بمدينة الرياض. نقدم خدماتنا منذ سنوات طويلة ونفخر بثقة عملائنا الكرام. نسعى دائماً لتقديم أفضل الخدمات بأعلى جودة وأنسب الأسعار.
+                </p>
+                <p class="text-lg leading-relaxed mb-8" style="color: var(--color-text-light);">
+                    فريقنا متخصص في جميع أنواع المطابخ سواء الألمنيوم أو الخشب، ونقدم خدمات شاملة تشمل الفك والتركيب والتفصيل وتغيير الرخام والألوان والسحابات وغيرها من الخدمات.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div class="p-6 rounded-lg" style="background: var(--color-surface);">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--color-primary);">رؤيتنا</h3>
+                        <p class="text-sm" style="color: var(--color-text-light);">أن نكون الخيار الأول والأفضل في خدمات المطابخ بالرياض من خلال تقديم خدمات عالية الجودة تلبي تطلعات عملائنا.</p>
+                    </div>
+                    <div class="p-6 rounded-lg" style="background: var(--color-surface);">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--color-primary);">مهمتنا</h3>
+                        <p class="text-sm" style="color: var(--color-text-light);">تقديم خدمات مطابخ متكاملة بأيدي فنيين متخصصين مع الالتزام بالجودة والمواعيد وأفضل الأسعار.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary);">ما يميزنا</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">خبرة طويلة في مجال المطابخ بجميع أنواعها</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">فريق فني متخصص ومدرب على أعلى مستوى</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">أسعار تنافسية ومناسبة للجميع</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">الالتزام بالمواعيد وسرعة في التنفيذ</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">ضمان على جميع أعمالنا</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0" style="color: var(--color-accent);">✓</span>
+                        <p class="text-sm" style="color: var(--color-text-light);">خدمة عملاء متاحة على مدار الساعة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <ContactCTA />
+    <Footer />
+    <WhatsAppButton />
+</Layout>

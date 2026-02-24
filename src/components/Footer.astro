@@ -1,9 +1,63 @@
 ---
+const currentYear = new Date().getFullYear();
 
+const services = [
+    'فني مطابخ المنيوم',
+    'تغيير رخام مطابخ',
+    'فك وتركيب مطابخ',
+    'تفصيل مطابخ',
+    'تغيير ألوان مطابخ',
+    'تغيير سحابات',
+];
 ---
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
-    </p>
+<footer style="background: var(--color-primary-dark); color: var(--color-text-white);">
+    <div class="container py-12 sm:py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl">🔧</span>
+                    <span class="text-xl font-bold">فني مطابخ الرياض</span>
+                </div>
+                <p class="text-sm opacity-80 leading-relaxed mb-4">
+                    نقدم جميع خدمات المطابخ بالرياض بأعلى جودة وأفضل الأسعار. فريق متخصص من الفنيين ذوي الخبرة الطويلة في مجال المطابخ.
+                </p>
+                <div class="flex items-center gap-2 text-sm opacity-80">
+                    <span>📍</span>
+                    <span>الرياض، المملكة العربية السعودية</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-4" style="color: var(--color-accent);">خدماتنا</h3>
+                <ul class="list-none p-0 m-0 space-y-2">
+                    {services.map(service => (
+                        <li class="text-sm opacity-80">{service}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-4" style="color: var(--color-accent);">تواصل معنا</h3>
+                <div class="space-y-3">
+                    <a href="tel:0591547538" class="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 no-underline" style="color: white;">
+                        <span>📞</span>
+                        <span dir="ltr">0591547538</span>
+                    </a>
+                    <a href="https://wa.me/966591547538" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 no-underline" style="color: white;">
+                        <span>💬</span>
+                        <span>واتساب</span>
+                    </a>
+                    <div class="flex items-center gap-2 text-sm opacity-80">
+                        <span>🕐</span>
+                        <span>متاحون على مدار الساعة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm opacity-60">
+            <p>© {currentYear} فني مطابخ الرياض - جميع الحقوق محفوظة</p>
+        </div>
+    </div>
 </footer>

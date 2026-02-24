@@ -1,78 +1,157 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
+    --font-sans: 'Cairo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --color-primary: #1a5276;
+    --color-primary-light: #2980b9;
+    --color-primary-dark: #0e3a54;
+    --color-accent: #d4a017;
+    --color-accent-light: #f0c040;
+    --color-accent-dark: #b8860b;
+    --color-surface: #f8f9fa;
+    --color-surface-dark: #e9ecef;
+    --color-text: #212529;
+    --color-text-light: #6c757d;
+    --color-text-white: #ffffff;
+    --color-success: #27ae60;
+    --color-whatsapp: #25d366;
 }
 
 @layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Cairo', sans-serif;
+        color: var(--color-text);
+        background: var(--color-surface);
+        margin: 0;
+        padding: 0;
+        line-height: 1.8;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-3xl sm:text-4xl lg:text-5xl;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-2xl sm:text-3xl;
     }
 
-    a:not(.btn) {
-        @apply underline transition hover:opacity-80;
+    h3 {
+        @apply text-xl sm:text-2xl;
     }
 
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
     }
 
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
-        font-size: 0.9em;
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
 @layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
-
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
+    .container {
+        @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
     }
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-        font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+        @apply inline-flex items-center justify-center gap-2 font-bold rounded-lg cursor-pointer transition-all duration-300 no-underline;
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background: var(--color-accent);
+        color: var(--color-primary-dark);
 
         &:hover {
-            @apply bg-primary/85;
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
         }
+    }
 
-        &:disabled {
-            @apply text-gray-400 bg-gray-700;
+    .btn-outline {
+        background: transparent;
+        color: var(--color-text-white);
+        border: 2px solid var(--color-text-white);
+
+        &:hover {
+            background: var(--color-text-white);
+            color: var(--color-primary);
+        }
+    }
+
+    .btn-whatsapp {
+        background: var(--color-whatsapp);
+        color: white;
+
+        &:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         }
     }
 
     .btn-lg {
-        --btn-font-size: 1.125rem;
-        --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
+        padding: 1rem 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    .section {
+        @apply py-16 sm:py-20;
+    }
+
+    .section-title {
+        @apply text-center mb-12;
+    }
+
+    .section-title h2 {
+        @apply mb-4;
+        color: var(--color-primary);
+    }
+
+    .section-title p {
+        @apply text-lg;
+        color: var(--color-text-light);
+    }
+
+    .card {
+        @apply rounded-xl overflow-hidden transition-all duration-300;
+        background: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    }
+
+    .bg-gradient-accent {
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
     }
 }
