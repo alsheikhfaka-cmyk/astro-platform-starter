@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+const services = [
+    {
+        title: 'فني مطابخ المنيوم',
+        description: 'فني متخصص في جميع أعمال مطابخ الألمنيوم بالرياض. صيانة وإصلاح وتركيب مطابخ الألمنيوم بخبرة عالية وأسعار مناسبة.',
+        icon: '🏗️',
+        href: '/services/aluminum-kitchens',
+    },
+    {
+        title: 'تغيير رخام مطابخ',
+        description: 'تغيير وتركيب رخام المطابخ بجميع أنواعه. رخام طبيعي وصناعي بأشكال وألوان متعددة تناسب جميع الأذواق.',
+        icon: '💎',
+        href: '/services/marble-replacement',
+    },
+    {
+        title: 'فك وتركيب مطابخ الخشب',
+        description: 'خدمة فك وتركيب جميع أنواع مطابخ الخشب باحترافية تامة مع الحفاظ على جودة المطبخ وسلامة القطع.',
+        icon: '🪵',
+        href: '/services/wooden-kitchens',
+    },
+    {
+        title: 'فك وتركيب جميع المطابخ',
+        description: 'نقدم خدمة فك وتركيب جميع أنواع المطابخ سواء خشب أو ألمنيوم أو أي نوع آخر بدقة واحترافية.',
+        icon: '🔩',
+        href: '/services/kitchen-installation',
+    },
+    {
+        title: 'تغيير لون مطابخ المنيوم',
+        description: 'تجديد مطبخك بتغيير لون مطابخ الألمنيوم بألوان عصرية وجذابة تناسب ذوقك وديكور منزلك.',
+        icon: '🎨',
+        href: '/services/color-change',
+    },
+    {
+        title: 'تغيير السحابات',
+        description: 'تغيير واستبدال سحابات المطابخ بأنواع حديثة وعالية الجودة لسهولة فتح وإغلاق الأدراج والأبواب.',
+        icon: '⚙️',
+        href: '/services/drawer-slides',
+    },
+    {
+        title: 'تفصيل جميع المطابخ',
+        description: 'تفصيل مطابخ حسب الطلب بتصاميم عصرية وأنيقة تناسب مساحة مطبخك ومتطلباتك الخاصة.',
+        icon: '📐',
+        href: '/services/custom-kitchens',
+    },
+    {
+        title: 'تعديل مكان الغسالة',
+        description: 'تعديل وتجهيز مكان الغسالة في المطبخ مع توصيل السباكة والكهرباء بشكل احترافي وآمن.',
+        icon: '🔄',
+        href: '/services/washer-relocation',
+    },
+];
+---
+
+<Layout title="خدماتنا | فني مطابخ الرياض" description="جميع خدمات المطابخ بالرياض: فك وتركيب، تفصيل، تغيير رخام وألوان وسحابات. اتصل 0591547538">
+    <Header />
+
+    <section class="relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding-top: 7rem;">
+        <div class="container py-12 sm:py-16 text-center" style="color: var(--color-text-white);">
+            <h1 class="mb-4">خدماتنا</h1>
+            <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                نقدم مجموعة شاملة ومتكاملة من خدمات المطابخ بالرياض لتلبية جميع احتياجاتكم
+            </p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {services.map(service => (
+                    <ServiceCard
+                        title={service.title}
+                        description={service.description}
+                        icon={service.icon}
+                        href={service.href}
+                    />
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <ContactCTA />
+    <Footer />
+    <WhatsAppButton />
+</Layout>

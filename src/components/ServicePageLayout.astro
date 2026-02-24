@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import ContactCTA from './ContactCTA.astro';
+import WhatsAppButton from './WhatsAppButton.astro';
+
+interface Props {
+    title: string;
+    pageTitle: string;
+    description: string;
+    icon: string;
+    intro: string;
+    features: string[];
+    details: string;
+}
+
+const { title, pageTitle, description, icon, intro, features, details } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+    <Header />
+
+    <section class="relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding-top: 7rem;">
+        <div class="container py-12 sm:py-16 text-center" style="color: var(--color-text-white);">
+            <span class="text-5xl block mb-4">{icon}</span>
+            <h1 class="mb-4">{pageTitle}</h1>
+            <p class="text-lg opacity-90 max-w-2xl mx-auto">{description}</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+        <div class="container max-w-4xl">
+            <div class="bg-white rounded-xl p-8 sm:p-12 shadow-sm">
+                <p class="text-lg leading-relaxed mb-8" style="color: var(--color-text-light);">
+                    {intro}
+                </p>
+
+                <h2 class="text-2xl font-bold mb-6" style="color: var(--color-primary);">مميزات الخدمة</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    {features.map(feature => (
+                        <div class="flex items-start gap-3 p-3 rounded-lg" style="background: var(--color-surface);">
+                            <span class="text-lg shrink-0" style="color: var(--color-accent);">✓</span>
+                            <p class="text-sm font-medium" style="color: var(--color-text);">{feature}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <h2 class="text-2xl font-bold mb-4" style="color: var(--color-primary);">تفاصيل الخدمة</h2>
+                <p class="text-base leading-relaxed mb-8" style="color: var(--color-text-light);">
+                    {details}
+                </p>
+
+                <div class="p-6 rounded-xl text-center" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); color: white;">
+                    <h3 class="text-xl font-bold mb-3">احصل على هذه الخدمة الآن</h3>
+                    <p class="text-sm opacity-90 mb-4">تواصل معنا للحصول على استشارة مجانية وعرض سعر</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <a href="tel:0591547538" class="btn btn-primary">
+                            📞 اتصل: <span dir="ltr">0591547538</span>
+                        </a>
+                        <a href="https://wa.me/966591547538" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            💬 واتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/services" class="text-sm font-semibold no-underline" style="color: var(--color-primary);">
+                    → العودة لجميع الخدمات
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <ContactCTA />
+    <Footer />
+    <WhatsAppButton />
+</Layout>

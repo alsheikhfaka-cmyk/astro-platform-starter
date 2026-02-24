@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout title="تواصل معنا | فني مطابخ الرياض - 0591547538" description="تواصل مع فني مطابخ الرياض. اتصل أو واتساب 0591547538. متاحون على مدار الساعة لخدمتكم.">
+    <Header />
+
+    <section class="relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); padding-top: 7rem;">
+        <div class="container py-12 sm:py-16 text-center" style="color: var(--color-text-white);">
+            <h1 class="mb-4">تواصل معنا</h1>
+            <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                نحن جاهزون لخدمتكم في أي وقت. تواصلوا معنا للحصول على استشارة مجانية
+            </p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+        <div class="container max-w-4xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold" style="color: var(--color-primary);">معلومات التواصل</h2>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl" style="background: var(--color-primary); color: white;">📞</div>
+                            <div>
+                                <h3 class="font-bold mb-1" style="color: var(--color-primary);">الهاتف</h3>
+                                <a href="tel:0591547538" class="text-lg font-semibold no-underline" dir="ltr" style="color: var(--color-text);">0591547538</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl" style="background: var(--color-whatsapp); color: white;">💬</div>
+                            <div>
+                                <h3 class="font-bold mb-1" style="color: var(--color-primary);">واتساب</h3>
+                                <a href="https://wa.me/966591547538" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold no-underline" dir="ltr" style="color: var(--color-text);">0591547538</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl" style="background: var(--color-accent); color: white;">📍</div>
+                            <div>
+                                <h3 class="font-bold mb-1" style="color: var(--color-primary);">الموقع</h3>
+                                <p style="color: var(--color-text-light);">الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl" style="background: var(--color-primary-light); color: white;">🕐</div>
+                            <div>
+                                <h3 class="font-bold mb-1" style="color: var(--color-primary);">أوقات العمل</h3>
+                                <p style="color: var(--color-text-light);">متاحون على مدار الساعة - 7 أيام في الأسبوع</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6" style="color: var(--color-primary);">تواصل سريع</h2>
+
+                    <div class="bg-white rounded-xl p-8 shadow-sm space-y-6">
+                        <p class="text-lg leading-relaxed" style="color: var(--color-text-light);">
+                            للحصول على استشارة مجانية أو طلب خدمة، يمكنكم التواصل معنا مباشرة عبر الهاتف أو الواتساب.
+                            سنقوم بالرد عليكم في أسرع وقت ممكن.
+                        </p>
+
+                        <a href="tel:0591547538" class="btn btn-primary btn-lg w-full">
+                            📞 اتصل الآن
+                        </a>
+
+                        <a href="https://wa.me/966591547538" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg w-full">
+                            💬 تواصل عبر واتساب
+                        </a>
+
+                        <div class="p-4 rounded-lg text-center" style="background: var(--color-surface);">
+                            <p class="text-sm font-semibold" style="color: var(--color-primary);">نغطي جميع أحياء الرياض</p>
+                            <p class="text-xs mt-1" style="color: var(--color-text-light);">نصلكم أينما كنتم في مدينة الرياض</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+    <WhatsAppButton />
+</Layout>
